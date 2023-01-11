@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "826771611739",
+    "project_id": "buy-it-55075",
+    "storage_bucket": "buy-it-55075.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:826771611739:android:926e28ae70a9ce98829f7e",
+        "android_client_info": {
+          "package_name": "com.example.newecommerce1123"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "826771611739-ph16h90p035vphjsh4kqrs095l89tcr0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBW3RlHWr6LhIHpSlgyJqdJX7dncQiAjow"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "826771611739-ph16h90p035vphjsh4kqrs095l89tcr0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

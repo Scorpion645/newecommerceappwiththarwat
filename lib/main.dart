@@ -1,12 +1,17 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:newecommerceapp/screens/home_page_screen.dart';
+import 'package:newecommerceapp/screens/signup_screen.dart';
 
 import 'screens/login_screen.dart';
 
 
-void main() {
-  runApp(const MyApp());
+void main() async {
+WidgetsFlutterBinding.ensureInitialized();
+await Firebase.initializeApp();
+runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -19,6 +24,8 @@ class MyApp extends StatelessWidget {
       initialRoute: LoginScreen.id,
       routes: {
         LoginScreen.id:(context) => LoginScreen(),
+         SignupScreen.id:(context) => SignupScreen(),
+        HomePage.id:(context) =>HomePage(),
       },
     );
   }
