@@ -1,14 +1,14 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'package:newecommerce1123/screens/signup_screen.dart';
+import 'package:newecommerce1123/screens/Login_screen.dart';
 import 'package:newecommerce1123/widgets/customtextfield.dart';
 
 import '../constants/constants.dart';
 
-class LoginScreen extends StatelessWidget {
-  static String id = 'Loginscreen';
-  const LoginScreen({Key? key}) : super(key: key);
+class SignupScreen extends StatelessWidget {
+  static String id = 'Signupscreen';
+  const SignupScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -45,11 +45,19 @@ class LoginScreen extends StatelessWidget {
             height: 20,
           ),
           CustomTextField(
-            myHintText: 'Enter your Email',
-            myIcon: Icons.email_outlined,
+            myHintText: 'Enter your name',
+            myIcon: Icons.person,
             myKeyboardType: TextInputType.emailAddress,
             myObscuredText: false,
           ),
+          SizedBox(
+            height: 20,
+          ),
+          CustomTextField(
+              myHintText: 'Enter your Email',
+              myIcon: Icons.email,
+              myKeyboardType: TextInputType.none,
+              myObscuredText: false),
           SizedBox(
             height: 20,
           ),
@@ -59,14 +67,14 @@ class LoginScreen extends StatelessWidget {
               myKeyboardType: TextInputType.none,
               myObscuredText: true),
           SizedBox(
-            height: 101,
+            height: 20,
           ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 120),
             child: TextButton(
               onPressed: () {},
               // ignore: sort_child_properties_last
-              child: Text('Log in',
+              child: Text('Sign up',
                   style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 20,
@@ -88,13 +96,13 @@ class LoginScreen extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text('Do Not have an account yet?',
+              Text('Already have an account yet?',
                   style: TextStyle(fontSize: 16)),
               TextButton(
                   onPressed: () {
-                    Navigator.popAndPushNamed(context, SignupScreen.id);
+                    Navigator.popAndPushNamed(context, LoginScreen.id);
                   },
-                  child: Text('Sign up',
+                  child: Text('Log in',
                       style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 18,

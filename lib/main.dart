@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:newecommerce1123/screens/signup_screen.dart';
 
 import 'screens/Login_screen.dart';
 
@@ -18,6 +19,7 @@ class MyApp extends StatelessWidget {
       initialRoute: LoginScreen.id,
       routes: {
         LoginScreen.id:(context) => LoginScreen(),
+        SignupScreen.id:(context) => SignupScreen(),
       },
     );
   }
