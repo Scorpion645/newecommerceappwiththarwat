@@ -1,16 +1,16 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'package:newecommerce1123/screens/signup_screen.dart';
+import 'package:newecommerce1123/screens/Login_screen.dart';
 
 import '../constants/constants.dart';
 import '../widget/customRow.dart';
 import '../widget/customTextButton.dart';
 import '../widget/customtextfield.dart';
 
-class LoginScreen extends StatelessWidget {
-  static String id = 'Login screen';
-  const LoginScreen({Key? key}) : super(key: key);
+class SignupScreen extends StatelessWidget {
+  static String id = 'signup screen';
+  const SignupScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -47,6 +47,15 @@ class LoginScreen extends StatelessWidget {
             height: 10,
           ),
           CustomTextField(
+              myHint: 'Enter your Name',
+              myKeyboard: TextInputType.emailAddress,
+              myObscuredtext: false,
+              myPrefixIcon: Icons.person,
+              onClick: () {}),
+          SizedBox(
+            height: 10,
+          ),
+          CustomTextField(
               myHint: 'Enter your Email',
               myKeyboard: TextInputType.emailAddress,
               myObscuredtext: false,
@@ -62,10 +71,10 @@ class LoginScreen extends StatelessWidget {
               myPrefixIcon: Icons.lock,
               onClick: () {}),
           SizedBox(
-            height: 89,
+            height: 20,
           ),
           CustomTextButton(
-            myButtonTitle: 'Log in',
+            myButtonTitle: 'Sign up',
             onClick: () {},
           ),
           SizedBox(
@@ -74,9 +83,9 @@ class LoginScreen extends StatelessWidget {
           CustomRow(
             myButtonTitle: 'Sign up',
             onClick: () {
-              Navigator.popAndPushNamed(context, SignupScreen.id);
+              Navigator.popAndPushNamed(context, LoginScreen.id);
             },
-            myquestion: 'Do not have an account yet?',
+            myquestion: 'Already have an account?',
           )
         ],
       ),
