@@ -7,6 +7,18 @@ class CustomTextField extends StatelessWidget {
   IconData myPrefixIcon;
   Function onClick;
 
+  String _errorMessage(String str) {
+    switch (myHint) {
+      case 'Enter your Name':
+        return 'Name is missing';
+      case 'Enter your Email':
+        return 'Email is missing';
+      case 'Enter your password':
+        return 'password is missing';
+    }
+    return 'Something went wrong';
+  }
+
   CustomTextField(
       {required this.myHint,
       required this.myKeyboard,
@@ -20,7 +32,12 @@ class CustomTextField extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 30),
-      child: TextField(
+      child: TextFormField(
+        validator: (value) {
+          if (value!.isEmpty) {
+            return _errorMessage(myHint);
+          }
+        },
         style:
             const TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
         onChanged: (value) {
@@ -39,6 +56,12 @@ class CustomTextField extends StatelessWidget {
                 borderRadius: BorderRadius.circular(30),
                 borderSide: const BorderSide(color: Colors.white, width: 3)),
             focusedBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(30),
+                borderSide: const BorderSide(color: Colors.white, width: 3)),
+            focusedErrorBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(30),
+                borderSide: const BorderSide(color: Colors.white, width: 3)),
+            errorBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(30),
                 borderSide: const BorderSide(color: Colors.white, width: 3)),
             prefixIcon: Padding(
