@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "621637666153",
+    "project_id": "tharwatproject-ab96a",
+    "storage_bucket": "tharwatproject-ab96a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:621637666153:android:21cfe6425f91745c3169f8",
+        "android_client_info": {
+          "package_name": "com.example.newecommerce1123"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "621637666153-s60gbhs9k8ligddb4oo6p18ucbhlf0li.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCA8zsM29RKP_kuFcKeSvtZiYXU2VtVJW0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "621637666153-s60gbhs9k8ligddb4oo6p18ucbhlf0li.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

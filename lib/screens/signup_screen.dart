@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:newecommerce1123/screens/Login_screen.dart';
+import 'package:newecommerce1123/services/auth.dart';
 
 import '../constants/constants.dart';
 import '../widget/customRow.dart';
@@ -10,7 +11,9 @@ import '../widget/customtextfield.dart';
 
 class SignupScreen extends StatelessWidget {
   static String id = 'signup screen';
-  SignupScreen({Key? key}) : super(key: key);
+   String _email ="", _password="";
+// SignupScreen({})
+  final _auth = Auth();
   GlobalKey<FormState> _globalKey = GlobalKey<FormState>();
 
   @override
@@ -54,7 +57,9 @@ class SignupScreen extends StatelessWidget {
                 myKeyboard: TextInputType.emailAddress,
                 myObscuredtext: false,
                 myPrefixIcon: Icons.person,
-                onClick: () {}),
+                onClick: (value) {
+                  print('name is ' + value);
+                }),
             SizedBox(
               height: 10,
             ),
@@ -63,7 +68,10 @@ class SignupScreen extends StatelessWidget {
                 myKeyboard: TextInputType.emailAddress,
                 myObscuredtext: false,
                 myPrefixIcon: Icons.email,
-                onClick: () {}),
+                onClick: (value) {
+                  _email = value;
+                  print(_email);
+                }),
             SizedBox(
               height: 10,
             ),
@@ -72,14 +80,22 @@ class SignupScreen extends StatelessWidget {
                 myKeyboard: TextInputType.text,
                 myObscuredtext: true,
                 myPrefixIcon: Icons.lock,
-                onClick: () {}),
+                onClick: (value) {
+                  _password = value;
+                  print(_password);
+                }),
             SizedBox(
               height: 20,
             ),
             CustomTextButton(
               myButtonTitle: 'Sign up',
-              onClick: () {
-                _globalKey.currentState!.validate();
+              onClick: () async{
+                print('the email is' + _email);
+                if (_globalKey.currentState!.validate()) {
+                  _globalKey.currentState!.save;
+                  final authResult = await _auth.signUp(_email, _password);
+                  // do something
+                }
               },
             ),
             SizedBox(
@@ -97,4 +113,5 @@ class SignupScreen extends StatelessWidget {
       ),
     );
   }
+
 }

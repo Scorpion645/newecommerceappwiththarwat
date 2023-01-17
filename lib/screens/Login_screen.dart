@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:newecommerce1123/screens/signup_screen.dart';
+import 'package:newecommerce1123/services/auth.dart';
 
 import '../constants/constants.dart';
 import '../widget/customRow.dart';
@@ -10,6 +11,7 @@ import '../widget/customtextfield.dart';
 
 class LoginScreen extends StatelessWidget {
   static String id = 'Login screen';
+  String _email = '', _password = "";
   LoginScreen({Key? key}) : super(key: key);
   GlobalKey<FormState> _globalKey = GlobalKey<FormState>();
 
@@ -54,7 +56,9 @@ class LoginScreen extends StatelessWidget {
                 myKeyboard: TextInputType.emailAddress,
                 myObscuredtext: false,
                 myPrefixIcon: Icons.email,
-                onClick: () {}),
+                onClick: (value) {
+                  _email = value;
+                }),
             SizedBox(
               height: 10,
             ),
@@ -63,14 +67,19 @@ class LoginScreen extends StatelessWidget {
                 myKeyboard: TextInputType.text,
                 myObscuredtext: true,
                 myPrefixIcon: Icons.lock,
-                onClick: () {}),
+                onClick: (value) {
+                  _password = value;
+                }),
             SizedBox(
               height: 89,
             ),
             CustomTextButton(
               myButtonTitle: 'Log in',
-              onClick: () {
-                _globalKey.currentState!.validate();
+              onClick: () async {
+                if (_globalKey.currentState!.validate()) {
+                  final authResult = await Auth().logIn(_email, _password);
+                  print(authResult.user.uid);
+                }
               },
             ),
             SizedBox(

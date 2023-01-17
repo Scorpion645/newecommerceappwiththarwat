@@ -5,7 +5,7 @@ class CustomTextField extends StatelessWidget {
   bool myObscuredtext;
   TextInputType myKeyboard;
   IconData myPrefixIcon;
-  Function onClick;
+ Function(String) onClick;
 
   String _errorMessage(String str) {
     switch (myHint) {
@@ -40,9 +40,7 @@ class CustomTextField extends StatelessWidget {
         },
         style:
             const TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
-        onChanged: (value) {
-          onClick;
-        },
+        onChanged: onClick,
         obscureText: myObscuredtext,
         keyboardType: myKeyboard,
         decoration: InputDecoration(
