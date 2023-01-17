@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 
 import 'screens/Login_screen.dart';
+import 'screens/signup_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,6 +19,7 @@ class MyApp extends StatelessWidget {
       initialRoute: LoginScreen.id,
       routes: {
         LoginScreen.id:(context) => LoginScreen(),
+        SignupScreen.id:(context) => SignupScreen(),
       },
     );
   }
