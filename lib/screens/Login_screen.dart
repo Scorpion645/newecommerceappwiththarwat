@@ -62,7 +62,7 @@ class LoginScreen extends StatelessWidget {
             myObscured: true,
           ),
           SizedBox(
-            height: 20,
+            height: 99,
           ),
 
           CustomButton(
