@@ -86,7 +86,7 @@ class SignupScreen extends StatelessWidget {
               height: 20,
             ),
             CustomRow(
-              myButtonTitle: 'Sign up',
+              myButtonTitle: 'Log in',
               onClick: () {
                 Navigator.popAndPushNamed(context, LoginScreen.id);
               },
