@@ -10,7 +10,7 @@ import '../widgets/customtextfield.dart';
 
 class LoginScreen extends StatelessWidget {
   static String id = 'HomePage';
-  const LoginScreen({Key? key}) : super(key: key);
+  String _email = '', _password = '';
 
   @override
   Widget build(BuildContext context) {
@@ -51,6 +51,9 @@ class LoginScreen extends StatelessWidget {
             myIcon: Icons.email,
             myKeyboard: TextInputType.emailAddress,
             myObscured: false,
+            onClick: (String value) {
+              _email = value;
+            },
           ),
           SizedBox(
             height: 20,
@@ -60,6 +63,9 @@ class LoginScreen extends StatelessWidget {
             myIcon: Icons.lock,
             myKeyboard: TextInputType.visiblePassword,
             myObscured: true,
+            onClick: (String value) {
+              _password = value;
+            },
           ),
           SizedBox(
             height: 99,

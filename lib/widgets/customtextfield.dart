@@ -7,18 +7,27 @@ class CustomTextField extends StatelessWidget {
   final IconData myIcon;
   final TextInputType myKeyboard;
   final bool myObscured;
+  void Function(String value)? onClick;
 
   CustomTextField(
       {required this.myHint,
       required this.myIcon,
       required this.myKeyboard,
-      required this.myObscured});
+      required this.myObscured, 
+      required this.onClick});
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 30),
-      child: TextField(
+      child: TextFormField(
+        onChanged: onClick,
+        validator: (value) {
+          if (value!.isEmpty) {
+            return 'Missing information';
+          }
+          return 'Great Job';
+        },
         keyboardType: myKeyboard,
         style:
             const TextStyle(fontWeight: FontWeight.bold, color: Colors.black),
